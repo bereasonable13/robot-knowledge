@@ -1,0 +1,16 @@
+# Security - Never commit these
+*.token
+*.key
+ghp_*
+github_pat_*
+.env
+secrets.txt
+
+# Temp files
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db

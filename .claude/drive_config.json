@@ -3,11 +3,14 @@
   "integration_name": "claude",
   "description": "Claude AI integration via Google Drive sync",
   "created": "2025-10-28",
+  "updated": "2025-10-28",
   
   "google_drive": {
-    "folder_id": "TO_BE_CONFIGURED",
-    "folder_name": "claude_knowledge",
-    "doc_id_knowledge": "1VAfn5HFtJoBkWin7C6YUUft5CoC6EwNBntgX9Wac8UPLtHR5OaM8A"
+    "folder_id": "1i_T5IB9Wobpbom7h18ndGt69-7UzBeEZ",
+    "folder_name": "robot-knowledge",
+    "folder_url": "https://drive.google.com/drive/folders/1i_T5IB9Wobpbom7h18ndGt69-7UzBeEZ",
+    "doc_id_knowledge": "1RoWCpr2vdNFlvWotL0r3_SQtdQc4LW941z1A974Xd3A",
+    "doc_url_knowledge": "https://docs.google.com/document/d/1RoWCpr2vdNFlvWotL0r3_SQtdQc4LW941z1A974Xd3A/edit"
   },
   
   "webhook": {
@@ -23,9 +26,10 @@
   ],
   
   "instructions": [
-    "1. Create Google Drive folder: claude_knowledge",
-    "2. Deploy webhook.gs to Google Apps Script",
-    "3. Update folder_id and webhook.url in this file",
-    "4. Test with: robot bug 'test sync'"
+    "1. Google Drive folder: robot-knowledge (configured)",
+    "2. KNOWLEDGE doc created (configured)",
+    "3. Deploy webhook.gs to Google Apps Script",
+    "4. Update webhook.url in this file",
+    "5. Test with: robot bug 'test sync'"
   ]
 }

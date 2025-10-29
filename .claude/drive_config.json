@@ -14,7 +14,7 @@
   },
   
   "webhook": {
-    "url": "TO_BE_CONFIGURED",
+    "url": "https://raw.githubusercontent.com/${CONFIG.GITHUB_REPO}/${CONFIG.BRANCH}/KNOWLEDGE.md",
     "method": "POST",
     "retry_attempts": 3,
     "timeout_seconds": 30

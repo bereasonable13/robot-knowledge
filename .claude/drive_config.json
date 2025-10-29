@@ -3,7 +3,7 @@
   "integration_name": "claude",
   "description": "Claude AI integration via Google Drive sync",
   "created": "2025-10-28",
-  "updated": "2025-10-28",
+  "updated": "2025-10-29",
   
   "google_drive": {
     "folder_id": "1i_T5IB9Wobpbom7h18ndGt69-7UzBeEZ",
@@ -14,7 +14,7 @@
   },
   
   "webhook": {
-    "url": "https://raw.githubusercontent.com/${CONFIG.GITHUB_REPO}/${CONFIG.BRANCH}/KNOWLEDGE.md",
+    "url": "https://script.google.com/macros/s/AKfycbwiuOJZmhcMmRaXeX6W3nyClYHnvGR160mZzkeW4cKkJWwzvyddp3F8zJ-DZkuGrEk7vQ/exec",
     "method": "POST",
     "retry_attempts": 3,
     "timeout_seconds": 30
@@ -25,11 +25,12 @@
     "KNOWLEDGE.md"
   ],
   
+  "status": "active",
+  "last_sync": "2025-10-29",
   "instructions": [
-    "1. Google Drive folder: robot-knowledge (configured)",
-    "2. KNOWLEDGE doc created (configured)",
-    "3. Deploy webhook.gs to Google Apps Script",
-    "4. Update webhook.url in this file",
-    "5. Test with: robot bug 'test sync'"
+    "✅ Google Drive folder configured",
+    "✅ KNOWLEDGE doc created and tested",
+    "✅ Webhook deployed and connected",
+    "✅ Auto-sync enabled on git push"
   ]
 }

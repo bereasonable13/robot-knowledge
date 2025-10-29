@@ -1,0 +1,62 @@
+{
+  "repo_name": "robot-knowledge",
+  "version": "1.0.0",
+  "structure_version": "1.0.0",
+  "description": "Personal knowledge base with Claude AI integration",
+  "created": "2025-10-28",
+  "last_updated": "2025-10-28",
+  
+  "file_structure": {
+    "work": "WORK.md",
+    "knowledge": "KNOWLEDGE.md",
+    "projects": "projects/",
+    "meta": "meta/",
+    "archive": "archive/"
+  },
+  
+  "contexts": {
+    "american-bocce": {
+      "active": true,
+      "description": "American Bocce Co - event demo with qr codes, poster, tv display site, and public.html page",
+      "tags": ["bocce", "tournaments", "events"],
+      "prefix": "[bocce]",
+      "path": "projects/american-bocce/",
+      "aliases": ["bocce", "abc"]
+    },
+    "nextup-events": {
+      "active": true,
+      "description": "NextUp/ZEventbook - event management platform",
+      "tags": ["events", "qr-codes", "analytics", "google-apps-script"],
+      "prefix": "[nextup]",
+      "path": "projects/nextup-events/",
+      "aliases": ["nextup", "zeventbook"]
+    },
+    "meta": {
+      "active": true,
+      "description": "Knowledge system - meta project about this system itself",
+      "tags": ["meta", "automation", "ai-knowledge", "methodology"],
+      "prefix": "[meta]",
+      "path": "meta/",
+      "aliases": ["robot", "system"]
+    }
+  },
+  
+  "ai_integrations": {
+    "claude": {
+      "enabled": true,
+      "config_path": ".claude/drive_config.json",
+      "access_method": "google_drive",
+      "auto_sync": true
+    },
+    "chatgpt": {
+      "enabled": false,
+      "note": "Future integration when implemented"
+    }
+  },
+  
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/bereasonable13/robot-knowledge.git",
+    "branch": "main"
+  }
+}

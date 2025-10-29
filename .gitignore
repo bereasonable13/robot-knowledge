@@ -1,0 +1,25 @@
+# Temporary files
+*.tmp
+*.swp
+*.bak
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+
+# Sensitive data
+*.token
+*.key
+.env
+
+# Archives
+archive/

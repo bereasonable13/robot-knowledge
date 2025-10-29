@@ -2,7 +2,7 @@
   "repo_name": "robot-knowledge",
   "version": "1.0.0",
   "structure_version": "1.0.0",
-  "description": "Personal knowledge base with Claude AI integration",
+  "description": "Personal knowledge base with multi-AI integration",
   "created": "2025-10-28",
   "last_updated": "2025-10-28",
   
@@ -46,11 +46,16 @@
       "enabled": true,
       "config_path": ".claude/drive_config.json",
       "access_method": "google_drive",
-      "auto_sync": true
+      "auto_sync": true,
+      "status": "active"
     },
     "chatgpt": {
       "enabled": false,
-      "note": "Future integration when implemented"
+      "config_path": ".chatgpt/config.json",
+      "access_method": "openai_api",
+      "auto_sync": false,
+      "status": "placeholder",
+      "note": "Future integration - placeholder structure ready"
     }
   },
   

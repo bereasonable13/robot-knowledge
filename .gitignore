@@ -23,3 +23,6 @@ Thumbs.db
 
 # Archives
 archive/
+
+# ChatGPT secrets
+.chatgpt/secrets.json

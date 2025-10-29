@@ -4,17 +4,18 @@
   "description": "ChatGPT integration via Custom Instructions API",
   "created": "2025-10-28",
   "enabled": false,
-  "note": "Enable when implementing ChatGPT integration",
+  "status": "placeholder",
   
   "openai": {
-    "api_key": "TO_BE_CONFIGURED",
-    "model": "gpt-4",
-    "max_tokens": 8000
+    "api_key": "USE_SECRETS_FILE",
+    "api_key_location": ".chatgpt/secrets.json",
+    "model": "gpt-4o-mini",
+    "max_tokens": 1500
   },
   
   "custom_instructions": {
     "method": "api",
-    "endpoint": "https://api.openai.com/v1/user/custom_instructions",
+    "endpoint": "https://api.openai.com/v1/chat/completions",
     "update_frequency": "on_commit"
   },
   
@@ -23,19 +24,5 @@
     "KNOWLEDGE.md"
   ],
   
-  "formatting": {
-    "max_length": 1500,
-    "sections": [
-      "environment",
-      "core_philosophy",
-      "recent_learnings"
-    ]
-  },
-  
-  "instructions": [
-    "1. Get OpenAI API key from platform.openai.com",
-    "2. Update api_key in this file",
-    "3. Test with: robot sync chatgpt",
-    "4. Verify custom instructions updated in ChatGPT"
-  ]
+  "note": "API key stored in secrets.json (gitignored)"
 }

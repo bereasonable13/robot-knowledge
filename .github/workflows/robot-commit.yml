@@ -1,1 +1,52 @@
+name: 🤖 Robot Commit
 
+on:
+  workflow_dispatch:
+    inputs:
+      target_path:
+        description: "File path (e.g., entries/test/TEST.md)"
+        required: true
+        type: string
+      commit_message:
+        description: "Commit message"
+        required: true
+        type: string
+      content:
+        description: "File content (markdown or text)"
+        required: true
+        type: string
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    name: Commit to GitHub
+    
+    steps:
+      - name: Prepare and Commit
+        run: |
+          echo "Encoding content..."
+          ENCODED=$(echo "${{ github.event.inputs.content }}" | base64 -w 0)
+          
+          echo "Checking if file exists..."
+          RESPONSE=$(curl -s -H "Authorization: Bearer ${{ secrets.ROBOT_PAT }}" \
+                          -H "Accept: application/vnd.github.v3+json" \
+                          "https://api.github.com/repos/bereasonable13/robot-knowledge/contents/${{ github.event.inputs.target_path }}")
+          
+          SHA=$(echo "$RESPONSE" | python3 -c "import sys, json; data=json.load(sys.stdin); print(data.get(\"sha\", \"\"))" 2>/dev/null || echo "")
+          
+          if [ -n "$SHA" ]; then
+            echo "Updating existing file (SHA: $SHA)..."
+            JSON="{\"message\":\"${{ github.event.inputs.commit_message }}\",\"content\":\"$ENCODED\",\"branch\":\"main\",\"sha\":\"$SHA\"}"
+          else
+            echo "Creating new file..."
+            JSON="{\"message\":\"${{ github.event.inputs.commit_message }}\",\"content\":\"$ENCODED\",\"branch\":\"main\"}"
+          fi
+          
+          curl -X PUT \
+            -H "Authorization: Bearer ${{ secrets.ROBOT_PAT }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Content-Type: application/json" \
+            -d "$JSON" \
+            "https://api.github.com/repos/bereasonable13/robot-knowledge/contents/${{ github.event.inputs.target_path }}"
+          
+          echo "✅ Committed successfully!"
